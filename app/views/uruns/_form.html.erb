@@ -1,0 +1,55 @@
+<div class="container-fluid" style="text-align:center;padding-left:20%;padding-right:20%;">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h1>Ürün Ekleyin / Düzenleyin</h1>
+          <% if @urun.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@urun.errors.count, "error") %> prohibited this urun from being saved:</h2>
+
+      <ul>
+      <% @urun.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+      </div>
+      
+      <%= form_for(@urun) do |f| %>
+      <div class="panel-body">
+        <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <label>Başlık</label>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <%= f.text_field :baslik,class: "form-control" %><br><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <%= f.label :icerik %>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <%= f.text_area :icerik,class: "form-control" %><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <%= f.file_field :image%>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <button type="submit" class="btn btn-success btn-lg">Yükle</button>
+          </div>
+        </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>

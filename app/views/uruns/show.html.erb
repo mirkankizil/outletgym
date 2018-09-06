@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+<div class="container-fluid" style="text-align:center;padding-left:20%;padding-right:20%;">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3>Ürün İncele</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <h4>Başlık</h4>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <%= @urun.baslik %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <h4>İçerik</h4>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <%= @urun.icerik %>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <%= image_tag @urun.image.url(:medium) if @urun.image? %>
+        </div>
+      </div>
+      <div class="panel-footer">
+           <% if user_signed_in? %>
+              <% if current_user.id==@urun.user_id %>
+                <a href="/uruns/<%=@urun.id%>/edit">
+                  <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;Düzenle
+                </a>
+                <a rel="nofollow" data-method="delete" href="/uruns/<%=@urun.id%>">
+                  <i class="fa fa-trash fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;Sil
+                </a>
+              <% end %>
+            <% end %>
+      </div>
+    </div>
+  </div>
+</div>

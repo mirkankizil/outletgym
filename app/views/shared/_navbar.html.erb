@@ -1,0 +1,53 @@
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+  </script>
+<div class="container-fluid">
+    <div class="navbar-header">
+    <a class="navbar-brand" href="/uruns">
+        Ana Sayfa
+    </a>
+  </div>
+  <ul class="nav navbar-nav">
+    <% if user_signed_in? %>
+      <li>
+        <a  href="/uruns/new" data-toggle="tooltip" data-placement="bottom" title="Yeni Ürün Oluşturun">
+          <i class="fa fa-plus-square fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;Yeni Ürün
+        </a>
+      </li>
+    <% end %>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+          <li>
+              <a>
+                  
+              <%= current_user.email %>
+              </a>
+          </li>
+          
+          <li>
+            <a class="btn-link" href="/users/edit" data-toggle="tooltip" data-placement="bottom" title="Profilinizi Düzenleyin">
+              <i class="fa fa-pencil-square-o fa-lg"></i>&nbsp;&nbsp;Profilinizi Düzenleyin
+            </a>
+          </li>
+          <li>
+            <a class="btn-link" rel="nofollow" data-method="delete" href="/users/sign_out" data-toggle="tooltip" data-placement="bottom" title="Oturumunuzu Sonlandırın.">
+              <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;Çıkış
+            </a>
+          </li>
+      <% else %>
+          <li>
+            <a class="btn-link " href="/users/sign_in" data-toggle="tooltip" data-placement="bottom" title="Bilgilerinizle giriş yapın.">
+              <i class="fa fa-sign-in fa-lg"></i>&nbsp;&nbsp;Giriş
+            </a>
+          </li>
+          <li>
+            <a class="btn-link " href="/users/sign_up" data-toggle="tooltip" data-placement="bottom" title="Ücretsiz üye olun.">
+              <i class="fa fa-users fa-lg"></i>&nbsp;&nbsp;Üye Ol
+            </a>
+          </li>
+      <% end %>
+    </ul>
+</div>

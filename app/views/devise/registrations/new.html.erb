@@ -1,0 +1,48 @@
+<div class="container-fluid" style="text-align:center;padding-left:20%;padding-right:20%;">
+  <div class="panel panel-info" style="text-align:center;">
+      <div class="panel-heading">
+        Üye Olun
+      </div>
+      <div class="panel-body"><br>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <label>E-Mail</label>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control",placeholder: "E-Mail" %><br>
+        </div>
+      </div>
+      
+      <div class="row">
+        
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <label>Şifre</label>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+          <input type="password" class="form-control" placeholder="Şifre" name="user[password]"><br>
+        </div>
+      </div>
+      
+      <div class="row">
+        
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <label>Şifre Tekrar</label>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control",placeholder: "Şifre Tekrar" %><br><br>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md12 col-lg-12">
+          <button type="submit" class="btn btn-success">Üye Olun</button>
+        </div>
+      </div>
+        
+  <% end %>
+      </div>
+</div>
+</div>
+

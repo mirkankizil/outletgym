@@ -1,0 +1,36 @@
+<div class="container-fluid" style="text-align:center;padding-left:20%;padding-right:20%;">
+  <div class="panel panel-primary" style="text-align:center;">
+      <div class="panel-heading">
+        Giriş Yapın
+      </div>
+      <div class="panel-body"><br>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: "Login" }) do |f| %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <label>E-Mail</label>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+          <input type="email" class="form-control" placeholder="Email" name="user[email]"><br>
+        </div>
+      </div>
+      
+      <div class="row">
+        
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <label>Şifre</label>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+          <input type="password" class="form-control" placeholder="Şifre" name="user[password]"><br><br>
+        </div>
+      </div>
+        
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md12 col-lg-12">
+          <button type="submit" class="btn btn-primary">Giriş Yapın</button>
+        </div>
+      </div>
+        
+  <% end %>
+      </div>
+</div>
+</div>

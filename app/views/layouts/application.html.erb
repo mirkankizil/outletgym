@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Giyim</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse" style="border-radius:0;">
+    <%= render 'shared/navbar' %>
+  </nav>
+  
+  <main class="container bg" style="width:100%;padding-top:0.5%;overflow:auto;">
+    
+    <div class="col-md-12 col-sm-12 col-md-12 col-lg-12" style="height:100%;">
+      <%= yield %>
+    </div>
+    
+  </main>
+
+</body>
+</html>
